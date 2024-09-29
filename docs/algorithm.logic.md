@@ -9,9 +9,8 @@ The flow distribution algorithm is designed to connect users with astrologers in
 1. **User Allocation:**
    - When a user requests an astrologer, the algorithm finds the astrologer with the fewest effective connections, calculated as:
 
-   \[
-   \text{Effective Connections} = \frac{\text{Current Connections}}{\text{Flow Multiplier}}
-   \]
+ Effective Connections  = {Current Connections} / {Flow Multiplier}
+   
 
    This formula ensures that top astrologers, who have a defined flow multiplier greater than 1, can manage a larger volume of users than regular astrologers.
 
