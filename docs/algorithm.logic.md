@@ -1,4 +1,3 @@
-
 # Algorithm Logic Documentation
 
 ## Overview
@@ -8,22 +7,28 @@ The flow distribution algorithm is designed to connect users with astrologers in
 ## Key Components
 
 1. **User Allocation:**
-   - When a user requests an astrologer, the algorithm finds the astrologer with the fewest effective connections, calculated as
+   - When a user requests an astrologer, the algorithm finds the astrologer with the fewest effective connections, calculated as:
+
+   \[
+   \text{Effective Connections} = \frac{\text{Current Connections}}{\text{Flow Multiplier}}
+   \]
+
+   This formula ensures that top astrologers, who have a defined flow multiplier greater than 1, can manage a larger volume of users than regular astrologers.
 
 2. **Top Astrologers:**
-- Top astrologers can receive more connections based on a defined "flowMultiplier". If the flow multiplier is set to 2 for a top astrologer, they will effectively count as half a connection for allocation purposes.
+   - Top astrologers can receive more connections based on a defined "flowMultiplier". If the flow multiplier is set to 2 for a top astrologer, they will effectively count as half a connection for allocation purposes. For example, if a top astrologer has 10 current connections, their effective connections would be 5.
 
 3. **Fair Distribution Logic:**
-- The algorithm iterates through the list of astrologers to determine the one with the least effective connections.
-- If all astrologers have the same multiplier, the one with the least current connections is selected.
+   - The algorithm iterates through the list of astrologers to determine the one with the least effective connections.
+   - If all astrologers have the same effective connection count, the one with the least current connections is selected. This ensures that users are assigned fairly across both regular and top astrologers.
 
 ## Algorithm Steps
 
 1. Fetch the list of astrologers.
 2. Filter astrologers into top and regular categories based on the `topAstrologer` flag.
 3. When a user requests an astrologer:
-- Iterate through the astrologers to find the one with the lowest effective connections.
-- Assign the user to the selected astrologer and increment their connection count.
+   - Iterate through the astrologers to find the one with the lowest effective connections.
+   - Assign the user to the selected astrologer and increment their connection count.
 
 ## Scalability Considerations
 
