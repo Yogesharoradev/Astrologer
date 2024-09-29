@@ -6,9 +6,6 @@ This document describes the test cases implemented to validate the functionality
 
 ## Testing Framework
 
-- **Framework Used:** Jest
-- **Description:** Jest is a JavaScript testing framework used to ensure the reliability of the application.
-
 ## Test Cases
 
 ### 1. Create User
@@ -30,18 +27,19 @@ This document describes the test cases implemented to validate the functionality
 - **Expected Outcome:** Should return the assigned astrologer with updated connection count.
 
 
-
 ### 3. Toggle Top Astrologer
 
 - **Test Name:** `should toggle the top astrologer status`
 - **Description:** Tests the toggle function to switch the `topAstrologer` status.
-- **Expected Outcome:** Should return the astrologer with the updated top status.
+- **Expected Outcome:** Should return the astrologer with the updated top status and return 200 status on success.
 
 
-### 4. distribite-astrologer
+### 4.  assign-user
 
-- **Test Name:** `should distribute the top astrologer as their wish`
-- **Description:** Tests the  function to give astrologer a chance how many users they want.
-- **Expected Outcome:** if astrologer has high multiplier than he will get more user 
+- **Test Name:** `should assign a user based on astrologers' flow multiplier`
+- **Description:**  Tests the function that assigns a user to an astrologer according to the astrologers' flow multiplier and current connections..
+- **Expected Outcome:** The astrologer with a higher flow multiplier and fewer effective connections will get more users assigned to them.
+
+
 
 

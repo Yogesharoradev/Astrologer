@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/', createAstrologer);
 
-router.patch('/:id/toggle', toggleTopAstrologer);
+router.patch('/:id', toggleTopAstrologer);
 
 
 

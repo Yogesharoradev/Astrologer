@@ -3,11 +3,11 @@ import Astrologer from '../models/astrologers.model.js';
 
 export const createAstrologer = async (req, res) => {
  
-    const { name, isTopAstrologer } = req.body;
+    const { name } = req.body;
 
   try {
 
-    const newAstrologer = new Astrologer({ name, isTopAstrologer });
+    const newAstrologer = new Astrologer({ name });
 
     await newAstrologer.save();
 
