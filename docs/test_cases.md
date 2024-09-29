@@ -44,6 +44,4 @@ This document describes the test cases implemented to validate the functionality
 - **Description:** Tests the  function to give astrologer a chance how many users they want.
 - **Expected Outcome:** if astrologer has high multiplier than he will get more user 
 
-## Running Tests
 
-To run the tests, execute the following command in the terminal:
